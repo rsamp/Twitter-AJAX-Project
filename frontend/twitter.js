@@ -1,7 +1,11 @@
 var FollowToggle = require("./follow_toggle");
-
+var UserSearch = require("./user_search");
 
 $(function(){
-  var $followBtn = $(".follow-toggle");
-  var ft = new FollowToggle($followBtn);
+  $(".follow-toggle").each(function(_i, followBtn) {
+    new FollowToggle(followBtn);
+  });
+  $("nav.users-search").each(function(_i, userSearch){
+    new UserSearch(userSearch);
+  });
 });
